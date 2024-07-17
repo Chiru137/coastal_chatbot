@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weatherApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .weather-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .weather-container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .weather-container input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 22px);
+        }
+        .weather-container button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .weather-container button:hover {
+            background-color: #0056b3;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .weather-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .weather-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .summary {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .canvas-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .canvas-wrapper {
+            width: 45%;
+        }
+    </style>
+</head>
+<body ng-controller="WeatherController">
+    <div class="weather-container">
+        <input type="text" ng-model="cityName" placeholder="Enter city name">
+        <button ng-click="getWeather()">Get Weather</button>
+        <div ng-if="weatherData" class="weather-info">
+            <h1>Currently</h1>
+            <p>{{currentTemp | number: 1}}°C</p>
+            <p>Weather: {{currentWeather | capitalize}}</p>
+            <p>High: {{highTemp | number: 1}}°C Low: {{lowTemp | number: 1}}°C Precip: {{currentPrecip | number: 0}}%</p>
+            <p>{{cityName}}</p>
+            <p>Day: {{currentDay}}</p>
+        </div>
+        <div class="summary">
+           
+            
+        </div>
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <canvas id="weatherChart"></canvas>
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="dailyWeatherChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="js/weather.js"></script>
+</body>
+</html>

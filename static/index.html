@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coastal Crop Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Including the Noto Sans Kannada font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada&display=swap">
+    <style>
+        /* General body styling */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111111;
+            color: white;
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align content to the left */
+            text-align: left; /* Align text to the left */
+            position: relative;
+            width: 100%;
+            max-width: 1200px; /* Limit the width of the container */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            width: 150px; /* Adjust the size as needed */
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* About Us button styling */
+        .about-us {
+            position: absolute;
+            top: 30px; /* Adjust as needed */
+            right: 20px;
+        }
+
+        .about-us button {
+            padding: 10px 25px;
+            font-size: 1em;
+            background-color: transparent;
+            border: 2px solid #7ee0e3;
+            color: #7ee0e3;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .about-us button:hover {
+            background-color: #7ee0e3;
+            color: #111111;
+        }
+
+        /* Content section styling */
+        .content {
+            margin-top: 150px; /* Adjust this to position the text */
+            padding-left: 20px; /* Padding from the left to align with the logo */
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            font-family: 'Noto Sans Kannada', sans-serif; /* Ensure to include this font in your project */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0 30px; /* Increased bottom margin for more space below the subtitle */
+        }
+
+        .get-started-btn {
+            padding: 10px 25px;
+            font-size: 1em;
+            background-color: transparent;
+            border: 2px solid #7ee0e3;
+            color: #7ee0e3;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .get-started-btn:hover {
+            background-color: #7ee0e3;
+            color: #111111;
+        }
+
+        /* Prism image styling */
+        .prism {
+            position: absolute;
+            top: -100px; /* Move the prism image upwards */
+            right: 0; /* Align the prism to the right edge */
+            transform: translateX(25%); /* Adjust the horizontal position if needed */
+        }
+
+        .prism img {
+            width: 750px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* About Us section styling (for ab.html) */
+        .ab-section {
+            width: 90%;
+            max-width: 1200px; /* Maximum width for the content */
+            padding: 20px;
+            background-color: #111111; /* Background matching the overall theme */
+            box-sizing: border-box;
+            text-align: center; /* Center align the content */
+        }
+
+        .about-content {
+            margin-bottom: 30px; /* Space between the text and the image */
+        }
+
+        .about-content h1 {
+            font-size: 2.5em;
+            color: #7ee0e3; /* Matching the button and link color */
+            margin-bottom: 20px;
+            font-family: 'Noto Sans Kannada', sans-serif;
+        }
+
+        .about-content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto; /* Center the paragraph */
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: add rounded corners to the image */
+        }
+
+        /* Return button styling */
+        .return-button {
+            margin-top: 20px;
+        }
+
+        .return-button a {
+            padding: 10px 25px;
+            font-size: 1em;
+            background-color: transparent;
+            border: 2px solid #7ee0e3;
+            color: #7ee0e3;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .return-button a:hover {
+            background-color: #7ee0e3;
+            color: #111111;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" />
+        </div>
+        <div class="about-us">
+            <button onclick="window.location.href='ab.html'">About Us</button>
+        </div>
+        <div class="content">
+            <h1>ಹಲೋ, ನಾನು ನಿಮ್ಮ ಕೃಷಿ ಮಿತ್ರ</h1>
+            <h2>The Coastal Crop Assistant</h2>
+            <button onclick="window.location.href='index2.html'">Get Started</button>
+        </div>
+    </div>
+    <script>
+        function getStarted() {
+            window.location.href = 'index1.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Flask
+Flask-CORS
+python-dotenv
+openai-whisper
+deep-translator
+langchain
+langchain_community
+langchain_huggingface
+faiss_cpu
+pypdf
+sentence_transformers
+gtts
+langchain_groq

@@ -1,0 +1,228 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+}
+
+.plant-selection, .chat-container, .loading {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+  background: white;
+}
+
+.plant-selection h2 {
+  margin-bottom: 20px;
+}
+
+.plant-selection button {
+  margin: 10px;
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.plant-selection button:hover {
+  background-color: #45a049;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
+  max-height: 600px;
+}
+
+.chat-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top: 2px solid #ddd;
+}
+
+.chat-footer input[type="text"] {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-footer button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-footer button:hover {
+  background-color: #45a049;
+}
+
+.chat-message {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 80%;
+  position: relative;
+  transition: background-color 0.3s;
+  white-space: pre-line
+}
+
+.user-message {
+  background-color: #e6f7ff;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.loading p {
+  font-size: 20px;
+}
+
+.speaker-button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Dropdown and Language Buttons Adjustments */
+.header-buttons .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.header-buttons .dropbtn {
+  background-color: white;
+  color: #4CAF50;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-buttons .dropbtn:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.header-buttons .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+.header-buttons .dropdown-content button {
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.header-buttons .dropdown-content button:hover,
+.header-buttons .dropdown-content button.selected {
+  background-color: #45a049;
+  color: white;
+}
+
+.header-buttons .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header-buttons .new-chat-button {
+  background-color: white;
+  color: #4CAF50;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #4CAF50;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-buttons .new-chat-button:hover {
+  background-color: #45a049;
+  color: white;
+}
+
+.header-buttons .new-chat-button.selected {
+  background-color: #45a049;
+  color: white;
+}
+   

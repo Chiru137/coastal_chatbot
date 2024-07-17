@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chatbotApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Coastal Crop Assistant Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-sanitize.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-controller="ChatController">
+    <div class="plant-selection" ng-show="!initialized && !loading">
+        <h2><center>Select a Plant</center></h2>
+        <center><button ng-click="selectPlant('arecanut')">Arecanut</button><br>
+        <button ng-click="selectPlant('coconut')">Coconut</button><br>
+        <button ng-click="selectPlant('cashew')">Cashew</button><br>
+        <button ng-click="selectPlant('cocoa')">Cocoa</button><br>
+        <button ng-click="redirectToWeather()">Weather</button><br></center>
+    </div>
+    <div class="chat-container" ng-show="initialized && !loading">
+        <div class="chat-header">
+            <h1>Coastal Crop Assistant Bot</h1>
+            <div class="header-buttons">
+                <div class="dropdown">
+                    <button class="dropbtn">Lang</button>
+                    <div class="dropdown-content">
+                        <button ng-click="switchLanguage('en')" ng-class="{'selected': language === 'en'}">English</button>
+                        <button ng-click="switchLanguage('kn')" ng-class="{'selected': language === 'kn'}">Kannada</button>
+                    </div>
+                </div>
+                <button ng-click="newChat()" class="new-chat-button">New Chat</button>
+            </div>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div ng-repeat="message in messages" 
+                class="chat-message" 
+                ng-class="{'user-message': message.user, 'bot-message': !message.user}">
+                <div ng-bind-html="message.text"></div>
+                <button ng-if="!message.user" ng-click="speakMessage(message.text)" class="speaker-button">🔊</button>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" ng-model="userMessage" ng-keydown="checkEnter($event)" placeholder="Type a message...">
+            <button ng-click="sendMessage()">Send</button>
+            <button id="voiceButton" ng-click="startVoiceRecognition()">🎤</button>
+            <button ng-click="resetBot()">Back</button>
+        </div>
+    </div>
+    <div class="loading" ng-show="loading">
+        <p>Loading...</p>
+  
+    </div>
+</body>
+</html>
